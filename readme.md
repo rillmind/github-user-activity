@@ -31,7 +31,7 @@ Windows:
 ```sh
 git clone https://github.com/rillmind/githubUserActivity.git
 cd githubUserActivity
-go build -o github-activity.exe .\cmd\
+go build -o github-activity.exe .\cmd\server\
 ```
 
 Note: If you are on Windows, you need to add the executable binary (.exe) to the environment
