@@ -22,7 +22,7 @@ Linux:
 ```sh
 git clone https://github.com/rillmind/githubUserActivity.git
 cd githubUserActivity
-go build -o github-activity ./cmd
+go build -o github-activity ./cmd/server/
 sudo cp github-activity /usr/bin/
 ```
 
