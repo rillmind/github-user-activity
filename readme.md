@@ -20,8 +20,8 @@ Simple command line interface to get github user activity
 Linux:
 
 ```sh
-git clone https://github.com/rillmind/taskManagerCli.git
-cd taskManagerCli
+git clone https://github.com/rillmind/githubUserActivity.git
+cd githubUserActivity
 go build -o task-cli ./cmd
 sudo cp task-cli /usr/bin/
 ```
@@ -29,8 +29,8 @@ sudo cp task-cli /usr/bin/
 Windows: 
 
 ```sh
-git clone https://github.com/rillmind/taskManagerCli.git
-cd taskManagerCli
+git clone https://github.com/rillmind/githubUserActivity.git
+cd githubUserActivity
 go build -o task-cli.exe .\cmd\
 ```
 
