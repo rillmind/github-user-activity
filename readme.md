@@ -22,8 +22,8 @@ Linux:
 ```sh
 git clone https://github.com/rillmind/githubUserActivity.git
 cd githubUserActivity
-go build -o task-cli ./cmd
-sudo cp task-cli /usr/bin/
+go build -o github-activity ./cmd
+sudo cp github-activity /usr/bin/
 ```
 
 Windows: 
@@ -31,7 +31,7 @@ Windows:
 ```sh
 git clone https://github.com/rillmind/githubUserActivity.git
 cd githubUserActivity
-go build -o task-cli.exe .\cmd\
+go build -o github-activity.exe .\cmd\
 ```
 
 Note: If you are on Windows, you need to add the executable binary (.exe) to the environment
