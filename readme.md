@@ -10,6 +10,18 @@ Simple command line interface to get github user activity
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png">
 </p>
 
+## What it does
+
+Takes a GitHub username, calls the public endpoint `https://api.github.com/users/<username>/events/public`
+(no token needed) and prints the user's recent activity, one line per event: repositories
+created, stars, pushes and so on.
+
+## Why it exists
+
+It is the [GitHub User Activity](https://roadmap.sh/projects/github-user-activity) project from the
+roadmap.sh back-end roadmap, built in Go following the project's specification: a CLI that
+consumes an external API and parses its JSON, using only the standard library.
+
 ## Requirements
 
 - Go 1.24.8 or higher
@@ -61,6 +73,23 @@ Windows: just run normally with './task-cli' without adding or removing command 
 - Pushed 1 commit to rillmind/sauter-university-2025-challenge
 - Started iamgabs/sauter-university-2025-challenge
 ```
+
+## How to test
+
+There are no automated tests. `go vet ./...` checks the code; to test the behavior (needs internet):
+
+```sh
+go build -o github-activity ./cmd/server/
+./github-activity rillmind                    # list of "- Created ...", "- Pushed ...", "- Started ..."
+./github-activity user-that-does-not-exist-123 # json: cannot unmarshal object ... (the API returns 404)
+```
+
+Things to know when checking the output:
+
+- Running it without a username panics (`index out of range`) instead of showing a usage message.
+- Push events now show `Pushed 0 commits`: the GitHub events API stopped sending the commit list
+  in the `payload`, so the count the code reads is always empty.
+- Unauthenticated requests are limited to 60 per hour by GitHub.
 
 ## Code information
 
