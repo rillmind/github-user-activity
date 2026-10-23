@@ -1,3 +1,3 @@
-module github.com/rillmind/githubUserActivity
+module github.com/rillmind/github-user-activity
 
 go 1.24.8

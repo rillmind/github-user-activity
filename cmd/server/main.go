@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/rillmind/githubUserActivity/src/request"
+	"github.com/rillmind/github-user-activity/src/request"
 )
 
 func main() {
